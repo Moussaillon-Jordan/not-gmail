@@ -37,5 +37,10 @@ class EmailsController < ApplicationController
   end
 end
 
+  private
+
+  def email_params
+    params.permit(:read)
+  end
 
 end
