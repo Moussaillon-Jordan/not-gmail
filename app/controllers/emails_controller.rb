@@ -4,7 +4,7 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.create(object: Faker::Book.title, body: Faker::ChuckNorris.fact)
+    @email = Email.create(object: Faker::Book.title, body: Faker::ChuckNorris.fact, read: false)
 
     respond_to do |format|
       format.html {
