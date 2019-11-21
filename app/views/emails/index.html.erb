@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row my-5">
+    <%= form_tag(emails_path, method: "post", remote: true) do %>
+    <%= submit_tag("M'envoyer un email", class: "btn btn-primary") %>
+    <%end%>
+  </div>
+
+  <div class="row no-gutters">
+    <div class="col-sm-4">
+
+      <div class="card">
+        <div class="card-header">
+          Objet
+        </div>
+        <ul class="list-group list-group-flush" id="mails-list">
+          <% @emails.each do |email|  %>
+            <li class="list-group-item" id="<%=email.id%>">
+              <%= link_to email.object, email_path(email.id), remote: true %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-8" id="mail-content">
+
+    </div>
+  </div>
+</div>

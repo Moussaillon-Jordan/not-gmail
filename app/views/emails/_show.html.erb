@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">
+    Message
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @email.object %> </h5>
+    <p class="card-text"><%= @email.body %> </p>
+    <%= link_to 'Supprimer', email_path(email.id), remote: true, data: {:confirm => 'Êtes vous sûr de vouloir supprimer cet email ?'}, :method => :delete, :class => "btn btn-primary"  %>
+    <a href="#" class="btn btn-outline-primary">Marquer comme lu</a>
+  </div>
+</div>
